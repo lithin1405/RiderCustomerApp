@@ -2,4 +2,7 @@
     <string name="app_name">Delini</string>
     <string name="progress_pleaseWait">Please wait...</string>
     <string name="check_connection">Check Connection</string>
+    <string name="car">CAR</string>
+    <string name="bike">BIKE</string>
+    <string name="keke">KEKE</string>
 </resources>

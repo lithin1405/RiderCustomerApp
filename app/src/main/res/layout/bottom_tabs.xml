@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/llbottomtabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@drawable/dashboard_icons_bg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:weightSum="3">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/llcar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/car"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/car"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="14sp" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/llbike"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bike"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bike"
+                android:textColor="#ffff"
+                android:layout_weight="1"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="12sp" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/llkeke"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/keke_one"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                />
+            <!--</android.support.v7.widget.CardView>-->
+
+            <android.support.v7.widget.AppCompatTextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/keke"
+                android:textColor="#ffff"
+                android:layout_weight="1"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="12sp" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+</android.support.design.widget.CoordinatorLayout>

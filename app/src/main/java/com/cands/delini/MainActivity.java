@@ -13,6 +13,8 @@ import android.os.CountDownTimer;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.view.View;
 import android.widget.RadioGroup;
 
 
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private WeakHashMap<Marker, String> markerMap = new WeakHashMap<>();
 
+    private LinearLayoutCompat llcar,llbike,llkeke;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,19 +62,45 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         context = this;
 
-        vehicleType = (RadioGroup) findViewById(R.id.vehicleType);
+//        vehicleType = (RadioGroup) findViewById(R.id.vehicleType);
+        llcar=(LinearLayoutCompat) findViewById(R.id.llcar);
+        llbike=(LinearLayoutCompat) findViewById(R.id.llbike);
+        llkeke=(LinearLayoutCompat) findViewById(R.id.llkeke);
 
-        vehicleType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//        vehicleType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                networkCall();
+//                if(vehicleType.getCheckedRadioButtonId() == R.id.cab){
+//                    vType = "car";
+//                }else if(vehicleType.getCheckedRadioButtonId() == R.id.clado){
+//                    vType = "bike";
+//                }else if(vehicleType.getCheckedRadioButtonId() == R.id.keke){
+//                    vType = "keke";
+//                }
+//            }
+//        });
+
+        llcar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
+            public void onClick(View view) {
                 networkCall();
-                if(vehicleType.getCheckedRadioButtonId() == R.id.cab){
-                    vType = "car";
-                }else if(vehicleType.getCheckedRadioButtonId() == R.id.clado){
-                    vType = "bike";
-                }else if(vehicleType.getCheckedRadioButtonId() == R.id.keke){
-                    vType = "keke";
-                }
+                vType = "car";
+            }
+        });
+        llbike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                networkCall();
+                vType = "bike";
+            }
+        });
+
+        llkeke.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                networkCall();
+                vType = "keke";
             }
         });
 
@@ -154,11 +184,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 markerOptions.position(currentLocation);
                 markerOptions.title("" + dto.getName() + " " + dto.getContact());
                 if(dto.getVehicleType().equals("car")) {
-                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.cab_icon_48));
+                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.car));
                 }else if(dto.getVehicleType().equals("bike")){
-                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.clado_48));
+                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.bike));
                 }else if(dto.getVehicleType().equals("keke")){
-                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.keke));
+                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.keke_one));
                 }
 
 
